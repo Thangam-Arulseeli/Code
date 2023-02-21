@@ -13,7 +13,22 @@
 
     <button type="button" onclick='document.getElementById("demo1").innerHTML = "Hello JavaScript!"'>Click Me!</button>
 
-    <button type="button" onclick='myFunction()'>Touch Me!</button>
+    <script>
+    const result1 =   'CG-VAK' ?? null;
+    console.log(result1);
+    // Expected output: "CG-VAK"
+    
+    const result2 = undefined ?? 100;
+    console.log(result2);
+    // Expected output: 100
+
+    const result3 =  null ?? undefined;
+    console.log(result3);
+    // Expected output: undefined
+</script>
+    
+    <button type="button" onclick='myFunction()'> Press Me!</button>
     <script src="/Basics/js/first.js"> </script>
 </body>
 </html>
+                
