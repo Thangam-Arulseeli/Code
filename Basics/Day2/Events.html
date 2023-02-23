@@ -1,4 +1,4 @@
-html>
+<html>
     <head>
         <script type = "text/javascript">
             
@@ -20,7 +20,6 @@ var a = 22;
 var b = 225;
 var c = 220;
 function changeBackground()
-
 {
 //var x = document.getElementById('bg');
 bg.style.backgroundColor = 'rgb('+a+', '+b+', '+c+')';
@@ -46,7 +45,8 @@ function highlightInput()
         }   
 
          </script>   
-    </head>
+</head>
+
     <body onload="window.alert('Page is loaded successfully!');">
         <h1>EVENTS</h1>
         <p>What is an Event ?
@@ -59,9 +59,9 @@ function highlightInput()
             Events are a part of the Document Object Model (DOM) Level 3 and every HTML element contains a set of events which can trigger JavaScript Code.
         </p>
         <p>Bring your mouse inside the division to see the result:</p>      
-      <div onmouseover = "over()">
+      <!-- <div onmouseover = "over()">
          <h2> This is inside the division </h2>
-      </div>  
+      </div>   -->
       <button onclick="this.innerHTML = Date()">The time is?</button>  
       <br>
       <br>

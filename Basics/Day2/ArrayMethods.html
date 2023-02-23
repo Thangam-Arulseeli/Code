@@ -21,12 +21,12 @@ var a = ['one', 'two', 'three', 'four', 'five']
 document.write(a);
 document.writeln("<br/>"); 
 var b = a.splice(2, 2);
-document.write(b);
+document.write("Deleted elements : " + b);
 document.writeln("<br/>"); 
-document.write(a);
+document.write("Array after deletion "+ a);
 document.writeln("<br/>"); 
 a.splice(2, 0, 'three','four');
-document.write(a);
+document.write("After Addition : " + a);
 document.writeln("<br/>"); 
             </script>
             <hr>
@@ -88,7 +88,7 @@ document.write(a);
     
     <script>
     var fruits = ["Banana", "Orange", "Apple", "Mango"];
-    document.getElementById("demo").innerHTML = fruits.toString();
+    document.getElementById("demo").innerHTML = "Display using toString() :" +  fruits.toString();
     </script>
     <hr>
     <p>The join() method returns an array as a string.
@@ -113,10 +113,10 @@ console.log(fruits);
                  var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
                  //extract the third and fourth elements, using negative numbers.
   var a = fruits.slice(-3, -1);
-  document.write(a);
+  document.write("Negative slice values -3, -1 " + a);
   document.writeln("<br/>"); 
   var b = fruits.slice(1, 4);
-  document.write(b);
+  document.write("Positive slice values 1, 4 " + b);
             </script>
 <hr>
 <p>The sort() method sorts an array alphabetically</p>
@@ -128,9 +128,9 @@ document.write(arr);
 <hr>
 <p>The filter() method creates a new array with all elements that pass the test implemented by the provided function.</p>
 <script>
-var words = ['Vishal', 'Naveen', 'Aakash', 'Lalith', 'Riju', 'Aakass Elango'];
+var words = ['Hemanth', 'Harshan', 'Divya Prakash', 'Dhana Prakash', 'Vasanth'];
 
-var result = words.filter(word => word.length == 6);
+var result = words.filter(word => word.length == 7 );
 
 document.write(result);
 </script>

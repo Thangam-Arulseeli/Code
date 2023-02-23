@@ -12,7 +12,7 @@
     var colors = ["Red", "Green", "Blue"]; 
     var fruits = ["Apple", "Banana", "Mango", "Orange", "Papaya"];
     var cities = ["London", "Paris", "New York"];
-    var person = ["John", "Wick", 32];
+    var person = ["Siva Bharath", "Srikanth", 32];
     
     // Printing variable values
     document.write(colors + "<br>");
@@ -38,26 +38,23 @@
 document.write(colors+"<br>"); // Prints: Red,Green,Blue,Yellow
 document.write(colors.length+"<br>"); // Prints: 4
 
-colors.push("Pink", "Voilet");
-colors.unshift("Yellow", "Grey");
+colors.push("Pink", "Violet");     // Add at the last
+colors.unshift("Yellow", "Grey");    // Add at the start
  
 document.write(colors+"<br>"); // Prints: Yellow,Grey,Red,Green,Blue,Yellow,Pink,Voilet
 document.write(colors.length+"<br>"); // Prints: 8
 
-var last = colors.pop();
+var last = colors.pop();    // Take out(Removes) the last
  
 document.write(last+"<br>"); // Prints: Violet
 document.write(colors.length+"<br>"); // Prints: 7
 document.write(colors+"<br>");
 
-var first = colors.shift();
+var first = colors.shift();   // Take out(Removes) the first element
  
 document.write(first+"<br>"); // Prints: Yellow
 document.write(colors.length+"<br>"); // Prints: 6
 document.write(colors+"<br>");
-
-
-
 
 
     // Iterates over array elements
@@ -69,8 +66,8 @@ for(var fruit of fruits)
 //for-in loop
 document.write("for -in loop"+"<br>");
 for(var i in fruits) 
-{  
-    document.write(fruits[i] + "<br>");
+{    var j=i;
+    document.write("Fruits [ " +  (j) + " ] " + fruits[i] + "<br>");
 }
     </script>
 </body>

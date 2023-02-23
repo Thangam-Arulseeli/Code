@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function displaySum() {
+  // if no argument        
+  if (arguments.length == 0) {
+    console.log('No argument is passed.');
+  }
+
+  // if only one argument 
+  else if (arguments.length == 1) {
+    console.log('You have to pass at least two arugments to perform addition.');
+  }
+
+  // multiple arguments
+  else {
+    let sum = 0;
+    let length = arguments.length; //7
+    for (var i = 0; i < length; i++) {  //0<7 1<7 7<7
+      sum = sum + arguments[i];   //0+3=3+5=8+7+2+9+7+8=41
+    }
+    console.log("Sum is " + sum);
+  }
+}
+
+displaySum(); //call function with no parameter
+displaySum(3); //call function with one parameter
+displaySum(4, 5); //call function with two parameters
+displaySum(3, 5, 7, 2, 9, 7, 8); //call function with multiple parameters
+    </script>
+</body>
+</html>

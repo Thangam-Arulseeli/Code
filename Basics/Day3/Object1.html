@@ -1,0 +1,73 @@
+<html>
+<body>
+
+<pre style="font-size:larger;">
+    A javaScript object is an entity having state and behavior (properties and method). 
+     Everything is an object in JavaScript.
+
+     JavaScript is object-oriented, but is not a class-based object-oriented language like Java,
+      C++, C#, etc. Class-based OOP languages are a subset of the larger family 
+     of OOP languages, JavaScript and Self are prototype-based languages. 
+    
+    There are 3 ways to create objects(without using class keyword).
+   <ul>
+   <li>By object literal</li>
+   <li>By creating instance of Object directly (using new keyword)</li> 
+   <li>By using an object constructor (using new keyword)</li> 
+   </ul> 
+</pre>
+
+
+<h3>OBJECT LITERAL</h3>
+<script>  
+    var emp1=
+    {
+        id:102,
+        name:"Sam",
+        salary:40000
+    };  
+    document.write(emp1.id+" "+emp1.name+" "+emp1.salary);  
+    </script>
+    <hr>
+
+
+    <h3>INSTANCE OF AN OBJECT</h3>
+    <script>  
+        var emp2=new Object();  
+        emp2.id=101;  
+        emp2.name="Peter";  
+        emp2.salary=50000;  
+        document.write(emp2.id+" "+emp2.name+" "+emp2.salary);  
+        </script>  
+        <hr>
+
+        
+        <h3>OBJECT CONSTRUCTOR</h3>
+        <script>  
+            function emp3(id,name,salary)
+            {  
+            this.id=id;  
+            this.name=name;  
+            this.salary=salary;  
+            }  
+            e=new emp3(103,"Paul",30000);  
+              
+            document.write(e.id+" "+e.name+" "+e.salary);  
+
+  class Car {
+    constructor(name, year) {
+    this.name = name;
+    this.year = year;
+    
+  }
+}
+
+let myCar = new Car("Ford", 2014);
+
+
+//document.write(myCar.name + "   " +myCar.year );
+console.log(myCar.name + "   " + myCar.year);
+
+</script>  
+</body>
+</html>

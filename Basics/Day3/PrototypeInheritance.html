@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<h1>Inheritance</h1>
+	<!--<script>  
+	//Person->Base class(fname,lname,getfullname(),getdetails())  
+	function Person(firstName, lastName) {
+		this.FirstName = firstName || "unknown";
+		this.LastName = lastName || "unknown"; 
+        Person.prototype.getFullName = function () {
+		return this.FirstName + " " + this.LastName;
+	}           
+	}
+    Person.prototype.getDetails = function () {
+      document.write(this.FirstName + ' '+ this.LastName+ " is working in "+ this.Designation + " Department")
+    };
+	//Employee->Derived class(designation,age)
+	function Employee(firstName, lastName, designation, age)
+	{
+		Person.call(this, firstName, lastName);
+		this.Designation = designation || "unknown";
+		this.Age = age || 22;
+	}
+	// Child Class Inheriting Parent Class
+	//Employee.prototype = Person.prototype;
+	Employee.prototype = new Person(); //Person(all properties and function)
+	Employee.prototype.constructor = Employee;
+	var emp = new Employee("John","Doe", "HR", 24);
+    //var per=new Person("Jancy","J");        
+	alert(emp.getFullName()); // John Doe
+	alert(per instanceof Employee); // true
+	alert(emp instanceof Person); // true
+    emp.getDetails();
+	</script>-->
+	 <!--<script>
+		function herbivorous(plants,herbs)
+		{
+			this.plants=plants;
+			this.herbs=herbs;
+		
+			herbivorous.prototype.getherbivorous = function ()
+		{
+			//return plants +' and '+herbs +' '+"are herbivorous";
+			document.write(plants +' and '+herbs +' '+"are herbivorous"+"<br>");
+		}	
+	}
+	function omnivorous(plants,herbs,animals)
+	{
+    herbivorous.call(this,plants,herbs);
+    this.animals=animals;
+	omnivorous.prototype.getomnivorous = function ()
+		{
+			om.getherbivorous();
+			document.write(animals + " are omnivorous");
+		}
+}
+// Child Class Inheriting Parent Class
+omnivorous.prototype = new herbivorous();
+omnivorous.prototype.constructor = omnivorous;
+var om = new omnivorous("a","b","c");
+om.getomnivorous();
+</script>-->
+<script>
+	function A(a)
+	{
+            this.a=a;
+            A.prototype.getA=function()
+			{
+                document.write(a+"<br>");
+            }
+        }
+        function B(a,b)
+		{
+            A.call(this,a);
+            this.b=b;
+            B.prototype.getB=function()
+			{
+                obj.getA();
+                document.write(b + "<br>");
+            }
+        }
+        function C(a,b,c)
+		{
+            B.call(this,a,b);
+            this.c=c;
+            C.prototype.getC=function()
+			{
+                obj.getB();
+				document.write(c + "<br>");
+            }
+        }  
+		B.prototype = Object.create(A.prototype);
+		B.prototype.constructor = B;
+		C.prototype = Object.create(B.prototype);
+		C.prototype.constructor = C;
+        //C.prototype=new B();
+        // B.prototype=new A();
+        //C.prototype.constructor=C;
+        var obj=new C(1,2,3);
+        obj.getC(); 
+</script>
+</body>
+</html>
