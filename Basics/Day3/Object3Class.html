@@ -41,23 +41,23 @@ console.log(b.getDetails());
                 <script>
                     class CompanyName
                     {
-                      constructor()
+                      constructor(cpy)
                       {
-                        this.company="CG VAK";
+                        this.company=cpy; //CG VAK";
                       }
                     }
                     class Employee extends CompanyName 
                     {
-                      constructor(id,name) 
+                      constructor(cpy,id,name) 
                       {
                           //"In JavaScript classes, you need to always call super when defining the constructor of a subclass."
-                       super();
+                       super(cpy);
                         this.id=id;
                         this.name=name;
                       } 
                     }
                     var e=new CompanyName();	
-                    var emp = new Employee(1,"John");
+                    var emp = new Employee("CGVAK", 1,"John");
                     document.writeln(emp.id+" "+emp.name+" "+emp.company);
                     </script>
             <hr>

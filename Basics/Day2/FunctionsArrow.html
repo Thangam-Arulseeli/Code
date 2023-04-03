@@ -6,59 +6,57 @@
 
 <p>This example shows the syntax of a function, without the use of arrow function syntax.</p>
 
-<p id="demo"></p>
+ <p id="dem"></p>
+  <script>
+      
+      function  hello() 
+      {
+        return "Hello World! - Ordinary function";
+      }
+      document.getElementById("dem").innerHTML = hello();
+  </script>
+  <hr>
 
-<script>
-var hello;
+  <p id="demo"></p>
+  <script>
+      var hello;
+      hello = function() 
+      {
+        return "Hello World! - Function variable";
+      }
+      document.getElementById("demo").innerHTML = hello();
+  </script>
+  <hr>
 
-hello = function() 
-{
-  return "Hello World!";
-}
+    <h2>JavaScript Arrow Function</h2>
+    <p>This example shows the syntax of an Arrow Function, and how to use it.</p>
+    <p id="demo1"></p>
+    <script>
+        var hello;
+        //hello = () => "Hello World!"; //Arrow Functions Return Value by Default:
+        hello = () => {
+          return "Hello World! -- Arrow function";
+        }
+        document.getElementById("demo1").innerHTML = hello();
+    </script>
+    <hr>
 
-document.getElementById("demo").innerHTML = hello();
-</script>
-<hr>
-<h2>JavaScript Arrow Function</h2>
+    <p>This example shows an Arrow Function with a parameter.</p>
+    <p id="demo2"></p>
+    <script>
+        var hello;
+        hello = (fName, lName) => "Hello " + fName + "  " +lName + " ---- Arraw Function:With Parameter";
+        document.getElementById("demo2").innerHTML = hello("Peter", "Paul");
+    </script>
+    <hr>
 
-<p>This example shows the syntax of an Arrow Function, and how to use it.</p>
-
-<p id="demo1"></p>
-
-<script>
-var hello;
-
-hello = () => "Hello World!"; //Arrow Functions Return Value by Default:
-//hello = () => {
- // return "Hello World!";
-//}
-
-document.getElementById("demo1").innerHTML = hello();
-</script>
-<hr>
-<p>This example shows an Arrow Function with a parameter.</p>
-
-<p id="demo2"></p>
-
-<script>
-var hello;
-
-hello = (val) => "Hello " + val;
-
-document.getElementById("demo2").innerHTML = hello("Universe!");
-</script>
-<hr>
-<p>This example shows that if you have only one parameter in an Arrow Function, you can skip the parentheses.</p>
-
-<p id="demo3"></p>
-
-<script>
-var hello;
-
-hello = val => "Hello " + val;
-
-document.getElementById("demo3").innerHTML = hello("Universe!");
-</script>
+    <p>This example shows that if you have only one parameter in an Arrow Function, you can skip the parentheses.</p>
+    <p id="demo3"></p>
+    <script>
+        var hello;
+        hello = val => "Hello " + val;
+        document.getElementById("demo3").innerHTML = hello("Universe!--Arrow Function:Passing Parameter Without ()");
+    </script>
 
 </body>
 </html>

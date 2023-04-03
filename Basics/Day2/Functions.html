@@ -4,54 +4,54 @@
 
 <h2>JavaScript Statements</h2>
 
-<p>JavaScript code blocks are written between { and }</p>
+        <p>JavaScript code blocks are written between { and }</p>
 
-<button type="button" onclick="myFunction()">Click Me!</button>
-<button type="button" onclick="getCube(4)">cube</button>
-<button type="button" onclick="func(2,4,3)">3 parameter function</button>
-<p id="demo1"></p>
-<p id="demo2"></p>
+        <button type="button" onclick="myFunction()">Click Me!</button>
+        <button type="button" onclick="getCube(4)">cube</button>
+        <button type="button" onclick="func(2,4,3)">3 parameter function</button>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
 
-<script>
-function myFunction() 
-{
-  document.getElementById("demo1").innerHTML = "<h3> Hello Trainees! </h3> ";
-  document.getElementById("demo2").innerHTML = "<u> How are you? </u> ";
-}
-function getCube(number)
-{  
-alert(number*number*number);  
-}  
-function returnFunc()
-{  
-return "Hello trainees! How are you?";  
-}  
-document.write(" <b> Function with return called : </b> " + returnFunc()); 
+      <script>
+            function myFunction() 
+            {
+              document.getElementById("demo1").innerHTML = "<h3> Hello Trainees! </h3> ";
+              document.getElementById("demo2").innerHTML = "<u> How are you? </u> ";
+            }
+            
+            function getCube(number)
+            {  
+            alert(number*number*number);  
+            }  
+            
+            function returnFunc()
+            {  
+              return "Hello trainees! How are you?";  
+            }  
+            
+            document.write(" <b> Function with return called : </b> " + returnFunc()); 
 
-document.writeln("<br/>"); 
+            document.writeln("<br/>"); 
 
-document.writeln("JavaScript Function Object ");
+            document.writeln("JavaScript Function Object ");
 
-var add=new Function("num1","num2","return num1+num2");  
-document.writeln("<br/>"); 
-document.writeln(add(2,5));
-</script>
-<hr>
-<script>
+            var add=new Function("num1","num2","return num1+num2");  
+            document.writeln("<br/>"); 
+            document.writeln(add(2,5));
+      </script>
+      <hr>
+    <script>
 
-  
-  function func(number,number1,number2)
-{  
-alert(number*number1*number2);  
-}
+        function func(number,number1,number2)
+          {  
+          alert(number*number1*number2);  
+          }
 
-
-
-function showFullname(firstName, lastName)
- {
-    alert(firstName + " " + lastName);
-}
-showFullname("Arul","Seeli");
+          function showFullname(firstName, lastName)
+          {
+              alert(firstName + " " + lastName);
+          }
+          showFullname("Arul","Seeli");
 
 
 </script>
