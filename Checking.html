@@ -24,9 +24,58 @@ Doubt cleared
     document.write(" <h3> Hello in body</h3> ");
     console.log("Working");
    // alert("I am in alert message box")
+
+   function myFunction( )
+   {
+    var x="";
+    document.getElementByID("demo").innerHTML=Boolean(x);
+   }
+
+   
+
     </script>
  
  <button type="button" onclick='myFunction()'>Click Me!</button>
+
+<script>
+ var num = 10
+ let number = 50
+function print() {
+    console.log("Global num(var) inside function = " + num)   // 10
+    console.log("Global number(let) inside function = " + number)  // 50
+    var num = 100;
+  
+    console.log("Global num(var) inside function = " + num)   // 100 
+   // console.log("Global number(let) inside function = " + number)
+}
+    // Can’t be accessed outside block  
+    console.log("Global num(var) before function = " + num)    // 10
+    console.log("Global number(let) before function = " + number)  // 50
+print()
+console.log("Global num(var) after function = " + num)   // 10
+//console.log("Global number(let) after function = " + number)
+
+
+var a=10;
+var a="CGVAK";
+console.log(a);
+
+let b=10;
+//let b="CGVAK";
+console.log(b);
+
+if (b==10)
+{
+    let p=100;
+    var q=200;
+    const r=300;
+}
+
+console.log("Q="+q);
+//console.log("R="+r);  // Error
+//console.log("P="+p);   // Error
+      
+</script>
 
 
 <script src="/Basics/js/first.js"> </script>

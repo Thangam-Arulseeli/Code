@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <p>Nested Function - Counting with a local variable.</p>
+
+    <p id="demo1">0</p>
+    
+    <script>
+    document.getElementById("demo1").innerHTML = addition();
+    function addition() {
+      let counter = 0;
+      function plus() {counter += 1;}
+      plus();  
+      return counter; 
+    }
+    </script>
+
+
+
+<h2>JavaScript Closures</h2>
+
+<p>Counting with a local variable.</p>
+
+<button type="button" onclick="myFunction()">Count!</button>
+
+<p id="demo">0</p>
+
+<script>
+const add = (function () {
+  let counter = 0;
+  return function () {counter += 1; return counter;}
+})();
+
+function myFunction(){
+  document.getElementById("demo").innerHTML = add();
+}
+
+// Example 2
+(function(outer) {
+    return (function(inner) {
+        console.log(outer);
+        console.log(inner);
+    })(200)
+})(100);
+
+
+</script>
+
+</body>
+</html>

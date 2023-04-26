@@ -66,8 +66,10 @@ for(var fruit of fruits)
 //for-in loop
 document.write("for -in loop"+"<br>");
 for(var i in fruits) 
-{    var j=i;
-    document.write("Fruits [ " +  (j) + " ] " + fruits[i] + "<br>");
+{   
+    //document.write("Fruits [ " +  (i+1) + " ] " + fruits[i] + "<br>");  // Working-Takes ppty
+    //document.write("Fruits [ " +  (eval(i)+1) + " ] " + fruits[i] + "<br>"); // Working-index
+    document.write("Fruits [ " +  (parseInt(i)+1) + " ] " + fruits[i] + "<br>"); // Working-index
 }
     </script>
 </body>

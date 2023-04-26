@@ -42,6 +42,7 @@ Sometimes you want to add new properties (or methods) to an object constructor.
 	document.write(studObj1.age+"<br>");
 
 	var studObj2 = new Student();
+  studObj2.age = 20;
 	document.write(studObj2.age); 
 	</script>	
   
@@ -84,6 +85,7 @@ Sometimes you want to add new properties (or methods) to an object constructor.
 
 	var studObj2 = new Student();
 	document.write(studObj2.age+"<br>"); 
+
   //As mentioned above, each object's prototype is linked to function's prototype object.
   // If you change function's prototype then only new objects will be linked to changed prototype. 
   //All other existing objects will still link to old prototype of function. 
@@ -112,7 +114,7 @@ Sometimes you want to add new properties (or methods) to an object constructor.
 	var studObj1 = new Student();
 	var proto = Object.getPrototypeOf(studObj1); 
         
-	document.write(proto.constructor); 
+	document.write("Proto type constructor : " + proto.constructor); 
 	</script>	
   <hr>
   <h2>JavaScript Objects</h2>

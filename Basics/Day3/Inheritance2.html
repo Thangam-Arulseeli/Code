@@ -1,4 +1,4 @@
-html>
+<html>
 <body>
 <script>
 class bank
@@ -14,6 +14,14 @@ this.account_type="savings";
 getdetails()
 {
 return "the account number is "+this.acc_number;
+}
+setAccType(acc_type)      // Set method is defined
+{
+    this.account_type=acc_type;
+}
+getAccType()    // Get method is defined
+{
+    return this.account_type;
 }
 }
 class atm extends bank
@@ -34,11 +42,12 @@ document.write(a.acc_number+"<br>");
 document.write(a.ifsc_code+"<br>");
 document.write(a.branch+"<br>");
 document.write(a.getdetails()+"<br>");
-document.write(a.account_type+"<br>");
+
+a.setAccType("Current");       // Set method is called
+document.write(a.getAccType()+"<br>");    // Get method is called
+
 document.write(a.atm_card+"<br>");
 document.write(a.balance+"<br>");
-
-
 </script>
 </body>
 </html>

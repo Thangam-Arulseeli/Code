@@ -17,7 +17,7 @@
         document.write(a);
         document.writeln("<br/>"); 
 
-        var b = a.splice(2, 2);
+        var b = a.splice(2, 2);  //  ['one', 'two', 'five']
         document.write("Deleted elements : " + b);
         document.writeln("<br/>"); 
 
@@ -112,10 +112,10 @@
         <script>
             var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
             //extract the third and fourth elements, using negative numbers.
-            var a = fruits.slice(-3, -1);
+            var a = fruits.slice(-3, -1);  // Lemon,Apple    [takes index as 1]
             document.write("Negative slice values -3, -1 " + a);
             document.writeln("<br/>"); 
-            var b = fruits.slice(1, 4);
+            var b = fruits.slice(1, 4);   // Orange,Lemon,Apple  [takes index as 0, upto 4th index]
             document.write("Positive slice values 1, 4 " + b);
         </script>
         <hr>

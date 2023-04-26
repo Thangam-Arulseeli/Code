@@ -22,7 +22,7 @@
       var hello;
       hello = function() 
       {
-        return "Hello World! - Function variable";
+        return "Hello World! - Function Expression (Anonymous Function)";
       }
       document.getElementById("demo").innerHTML = hello();
   </script>
@@ -32,9 +32,9 @@
     <p>This example shows the syntax of an Arrow Function, and how to use it.</p>
     <p id="demo1"></p>
     <script>
-        var hello;
+        // var hello;
         //hello = () => "Hello World!"; //Arrow Functions Return Value by Default:
-        hello = () => {
+       var hello = () => {
           return "Hello World! -- Arrow function";
         }
         document.getElementById("demo1").innerHTML = hello();
@@ -44,8 +44,8 @@
     <p>This example shows an Arrow Function with a parameter.</p>
     <p id="demo2"></p>
     <script>
-        var hello;
-        hello = (fName, lName) => "Hello " + fName + "  " +lName + " ---- Arraw Function:With Parameter";
+        //var hello;
+      var  hello = (fName, lName) => "Hello " + fName + "  " +lName + " ---- Arraw Function:With Parameter";
         document.getElementById("demo2").innerHTML = hello("Peter", "Paul");
     </script>
     <hr>
@@ -57,6 +57,17 @@
         hello = val => "Hello " + val;
         document.getElementById("demo3").innerHTML = hello("Universe!--Arrow Function:Passing Parameter Without ()");
     </script>
+
+<script>
+  
+     function calculate(x,y) 
+      {
+        var z=x+y;
+        return z;
+      }
+      console.log("Z="+calculate(10,20));
+      console.log("Z="+calculate((10),(20)));
+</script>
 
 </body>
 </html>

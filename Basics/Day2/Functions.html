@@ -44,16 +44,40 @@
 
         function func(number,number1,number2)
           {  
-          alert(number*number1*number2);  
+          console.log(number*number1*number2);  
           }
 
           function showFullname(firstName, lastName)
           {
               alert(firstName + " " + lastName);
           }
-          showFullname("Arul","Seeli");
+          showFullname("CGVAK","  G2");
+
+     // Traditional Function Expression
+     var add = function(a, b){
+      return a+b;
+     }
 
 
+     //Traditional ordinary function
+     function addition(x,y=10){
+      return x+y;
+     }
+
+     // Arrow Function Expression
+     var arrowAdd = (a, b) => a + b;
+
+     // Traditional function expression
+    var multiplyBy2 = function(num){
+      return num * 2;
+    }
+    // Arrow function expression
+    var arrowMultiplyBy2 = num => num * 2;
+
+    console.log("Ordiary Function="+addition(2));
+    console.log("Arrow Function ="+arrowAdd(10,20));
+    console.log(multiplyBy2(100));
+    console.log(arrowMultiplyBy2(1000));
 </script>
 
 </body>

@@ -29,8 +29,25 @@ console.log(person.getFunction());
 
 console.log("Land Mobile No: " + person.phone_number.mobile);
 console.log("Land line No: " + person.phone_number.landline);
+</script>
+
+
+<script>
+/// Static variables
+class MyClass {
+static staticVariable = 'static';
+getStaticVariable() {
+return MyClass.staticVariable;
+}
+}
+console.log(MyClass.staticVariable); // 'static'
+var myObject = new MyClass();
+console.log(myObject.staticVariable); // undefined
+console.log(myObject.getStaticVariable()); // 'static'
 
 </script>
-    </body>
+
+
+</body>
 
 </html>
