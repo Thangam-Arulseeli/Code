@@ -166,9 +166,9 @@ console.log(`The factorial of ${num} is ${result}`); // console.log("The factori
 
 
 // Example for rest parameter
-function myFun(...manyMoreArgs) {
- // console.log("a", a);
-  //console.log("b", b);
+function myFun(a, b, ...manyMoreArgs) {
+  console.log("a", a);
+  console.log("b", b);
   console.log("manyMoreArgs", manyMoreArgs);
 }
 
