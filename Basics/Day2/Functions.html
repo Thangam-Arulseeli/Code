@@ -16,7 +16,7 @@
             function myFunction() 
             {
               document.getElementById("demo1").innerHTML = "<h3> Hello Trainees! </h3> ";
-              document.getElementById("demo2").innerHTML = "<u> How are you? </u> ";
+              document.getElementById("demo2").innerText = "<u> How are you? </u> ";
             }
             
             function getCube(number)
@@ -31,8 +31,9 @@
             
             document.write(" <b> Function with return called : </b> " + returnFunc()); 
 
-            document.writeln("<br/>"); 
+            document.writeln("<br/> <hr/>"); 
 
+           
             document.writeln("JavaScript Function Object ");
 
             var add=new Function("num1","num2","return num1+num2");  
@@ -52,6 +53,67 @@
               alert(firstName + " " + lastName);
           }
           showFullname("CGVAK","  G2");
+/*
+setTimeout()
+-------------
+Executes a function once after a given delay (in milliseconds).
+
+Syntax: 
+setTimeout(function, delay);
+
+Example:
+setTimeout(() => {
+   console.log("Hello after 3 seconds");
+}, 3000);
+NOTE: Runs only once after 3 seconds
+clearTimeout(id) -> Stops the execution of the function specified in setTimeout().
+
+------------
+
+setInterval()
+---------------
+Executes a function repeatedly at fixed time intervals (in milliseconds).
+Keeps running until you stop it using clearInterval().
+
+Syntax:
+setInterval(function, interval);
+
+Example:
+setInterval(() => {
+   console.log("Hello every 2 seconds");
+}, 2000);
+
+
+NOTE: Prints message every 2 seconds continuously.
+clearInterval(id)
+-------------------
+
+Example Togather
+-------------------
+// setTimeout example
+let timeoutId = setTimeout(() => {
+   console.log("Runs only once after 5 seconds");
+}, 5000);
+
+// setInterval example
+let intervalId = setInterval(() => {
+   console.log("Runs every 2 seconds");
+}, 2000);
+
+// Stop interval after 7 seconds
+setTimeout(() => {
+   clearInterval(intervalId);
+   console.log("Stopped interval");
+}, 7000);
+
+
+Important Points to Remember
+----------------------- 
+1. Use setTimeout when you want a one-time delay.
+2. Use setInterval when you want a repeated execution.
+
+
+*/
 
 
 // Example 1: -- setIntervel()
@@ -99,14 +161,14 @@ const num = 3;
 // calling factorial() if num is non-negative
 if (num > 0) {
 let result = factorial(num);
-console.log(`The factorial of ${num} is ${result}`);
+console.log(`The factorial of ${num} is ${result}`); // console.log("The factorial of "+ num +" is "+ result);
 }
 
 
 // Example for rest parameter
-function myFun(a, b, ...manyMoreArgs) {
-  console.log("a", a);
-  console.log("b", b);
+function myFun(...manyMoreArgs) {
+ // console.log("a", a);
+  //console.log("b", b);
   console.log("manyMoreArgs", manyMoreArgs);
 }
 

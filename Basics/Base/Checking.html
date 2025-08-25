@@ -4,33 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checking - JS </title>
+    <title> Introduction - JS </title>
 </head>
 <body>
+
     <script>
-        document.write("Hai");
-        console.log(0.1+0.2);
-        console.log(0.1+0.2 == 0.3);
+    // Writing to the HTML document
+    document.write("Hai" + "<br>");
 
-        var x = 5; //without decimal  
-        var y = 5.0; //with decimal  
-        document.write(x==y);
-        document.write(x===y);
+    // Log float addition result to console
+    console.log(0.1 + 0.2);              // Outputs: 0.30000000000000004 (floating point precision)
+    console.log(0.1 + 0.2 == 0.3);       // Outputs: false
 
-        // var scope="global scope";
-        // function checkscope()
-        // {
-        //     var scope="local scope";
-        //     function fun(){
-        //         return scope;
-        //     }
-        //     return fun;
-        // }
-        //  console.log(checkscope());
-            
-        
-        
+    // Writing the same values to the document
+    document.write((0.1 + 0.2).toFixed(3) + "<br>");  // 0.300
+    document.write((0.1 + 0.2 == 0.3) + "<br>");      // false (displayed as "false")
 
+    var x = 5;    // integer
+    var y = 5.0;  // float, but in JavaScript both are of type 'number'
+    
+    var z = "5";  // string
+    // == compares value only
+    document.write((x == y) + "<br>");    // true
+
+    // === compares value and type (in JavaScript, both are 'number')
+    document.write((x === z) + "<br>");   // false (type is different)
+    document.write((x == z) + "<br>");    // true (value is the same)
     </script>
+
 </body>
 </html>

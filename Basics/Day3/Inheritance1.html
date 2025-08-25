@@ -56,8 +56,25 @@
           document.writeln(m.getDate()+"-"+(m.getMonth()+1)+"-"+m.getFullYear());
       </script>
                 <hr>
+   
+      <script>
+        class Sample{
+          constructor (){
+            console.log("Base Constructor");
+          }
+        }
+        class Example extends Sample{
+          constructor(){
+           super();
+            console.log("Derived Constructor");
+            // super(); 
+          }
+        }
+        var ex=new Example();
 
-
+      </script>
+    
+        
 
                 
     </body>

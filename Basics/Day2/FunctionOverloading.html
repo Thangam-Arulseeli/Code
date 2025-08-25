@@ -1,32 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
   </head>
 
-    <body>
-       <script>
-          function displaySum() {
-              // if no argument        
-              if (arguments.length == 0) {
-                  console.log('No argument is passed.');
-             }
-            // if only one argument 
-            else if (arguments.length == 1) {
-              console.log('You have to pass at least two arugments to perform addition.');
-            }
-            // multiple arguments
-            else {
-                let sum = 0;
-                let length = arguments.length; //7
-                for (var i = 0; i < length; i++) {  //0<7 1<7 7<7
-                  sum = sum + arguments[i];   //0+3=3+5=8+7+2+9+7+8=41
-                }
-              console.log("Sum is " + sum);
-            }
+  <body>
+    <script>
+      //Function Overloading in JavaScript
+      //JavaScript does not support function overloading in the traditional sense as seen in languages like Java or C++.
+      // In JavaScript, if you define multiple functions with the same name, the last defined function will overwrite the previous ones.
+      // However, you can achieve similar functionality by using the arguments object or by checking the number and types of parameters passed to the function.
+
+      function greet(name) {
+        console.log("Hello " + name);
+      }
+
+      function greet(firstName, lastName) {
+        console.log("Hello " + firstName + " " + lastName);
+      }
+      greet("John");
+      // Output: Hello undefined undefined (because the 2nd definition replaced the 1st one)
+
+      /*How to Achieve "Overloading" in JavaScript
+
+Instead of real overloading, we use techniques like:
+
+1. Check number of arguments (arguments.length)
+*/
+      function greet() {
+        if (arguments.length === 1) {
+          console.log("Hello " + arguments[0]);
+        } else if (arguments.length === 2) {
+          console.log("Hello " + arguments[0] + " " + arguments[1]);
+        } else {
+          console.log("Hello Guest");
+        }
+      }
+
+      greet("John"); // Hello John
+      greet("John", "Doe"); // Hello John Doe
+      greet();
+      // Hello Guest
+
+      // 2. Use default parameters
+      function greet(firstName, lastName = "") {
+        console.log("Hello " + firstName + " " + lastName);
+      }
+
+      greet("John"); // Hello John
+      greet("John", "Doe"); // Hello John Doe
+
+      //3. Use Object Parameters (more flexible)
+      function greet(options) {
+        if (options.lastName) {
+          console.log("Hello " + options.firstName + " " + options.lastName);
+        } else {
+          console.log("Hello " + options.firstName);
+        }
+      }
+
+      greet({ firstName: "John" }); // Hello John
+      greet({ firstName: "John", lastName: "Doe" }); // Hello John Doe
+
+      //4. Use Rest Parameters
+      //The rest parameter (...args) collects all arguments into an array.
+
+      function demo(...args) {
+        console.log(args);
+      }
+      demo(1); // [1]
+      demo(1, 2, 3); // [1, 2, 3]
+
+      //4.1. Overloaded by argument count
+      function greet(...args) {
+        if (args.length === 1) {
+          console.log("Hello " + args[0]);
+        } else if (args.length === 2) {
+          console.log("Hello " + args[0] + " " + args[1]);
+        } else {
+          console.log("Hello Guest");
+        }
+      }
+
+      greet("John"); // Hello John
+      greet("John", "Doe"); // Hello John Doe
+      greet(); // Hello Guest
+
+      //4.2. Overloaded by type checking
+      function calculate(...args) {
+        if (args.length === 1 && typeof args[0] === "number") {
+          console.log("Square: " + args[0] * args[0]);
+        } else if (args.length === 2) {
+          console.log("Sum: " + (args[0] + args[1]));
+        } else {
+          console.log("Invalid input");
+        }
+      }
+
+      calculate(5); // Square: 25
+      calculate(3, 7); // Sum: 10
+      calculate("Hi"); // Invalid input
+
+      //4.3 Flexible Function (like Java/C++ overloading)
+      function info(...args) {
+        if (args.length === 1) {
+          console.log("Name: " + args[0]);
+        } else if (args.length === 2) {
+          console.log("Name: " + args[0] + ", Age: " + args[1]);
+        } else if (args.length === 3) {
+          console.log(
+            "Name: " + args[0] + ", Age: " + args[1] + ", City: " + args[2]
+          );
+        } else {
+          console.log("Invalid input");
+        }
+      }
+
+      info("Rahul"); // Name: Rahul
+      info("Rahul", 25); // Name: Rahul, Age: 25
+      info("Rahul", 25, "Chennai"); // Name: Rahul, Age: 25, City: Chennai
+    </script>
+    <script>
+      function displaySum() {
+        // if no argument
+        if (arguments.length == 0) {
+          console.log("No argument is passed.");
+        }
+        // if only one argument
+        else if (arguments.length == 1) {
+          console.log(
+            "You have to pass at least two arugments to perform addition."
+          );
+        }
+        // multiple arguments
+        else {
+          let sum = 0;
+          let length = arguments.length; //7
+          for (var i = 0; i < length; i++) {
+            //0<7 1<7 7<7
+            sum = sum + arguments[i]; //0+3=3+5=8+7+2+9+7+8=41
+          }
+          console.log("Sum is " + sum);
+        }
       }
 
       displaySum(); //call function with no parameter
@@ -34,5 +152,5 @@
       displaySum(4, 5); //call function with two parameters
       displaySum(3, 5, 7, 9.2, 29.67, 7, 8); //call function with multiple parameters
     </script>
-</body>
+  </body>
 </html>

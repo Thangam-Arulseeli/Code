@@ -5,11 +5,11 @@
         const months = ['Jan', 'March', 'April', 'June'];
 
         //splice(start-index, deleteCount, item1, item2, itemN)
-        months.splice(1, 0, 'Feb');  // inserts at index 1
+        months.splice(1, 0, 'Feb');  // inserts at index 1 and no item will be deleted
         document.write(months); // expected output: Array ["Jan", "Feb", "March", "April", "June"]
         document.writeln("<br/>"); 
 
-        months.splice(4, 1, 'May');   // replaces 1 element at index 4
+        months.splice(4, 1, 'May','Jun','Jul');   // replaces 1 element at index 4
         document.write(months);  // expected output: Array ["Jan", "Feb", "March", "April", "May"]
         document.writeln("<br/>"); 
 
@@ -50,11 +50,11 @@
     <hr>
 
     <p>The entries() method returns a new Array Iterator object 
-        that contains the key/value pairs for each index in the array.</p>
+        that contains the key/value pairs for each index and the element in the array.</p>
     <script>
         var a = ['a', 'b', 'c','d','e'];
         var iterator = a.entries();
-
+        document.write("Array values using entries() method" + "<br>"); 
             for (let e of iterator)
             {
             document.write(e+"<br>");
@@ -77,11 +77,11 @@
     <p>The lastIndexOf() method returns the last index (position) of a specified value</p>
     <script>
         var fruits = ["Banana", "Orange", "Apple", "Mango","Apple"];
-        var a=fruits.indexof("Apple") ;  // Returns 2
+        var a=fruits.indexOf("Apple") ;  // Returns 2
         document.write(a);
         document.writeln("<br/>"); 
         a=fruits.lastIndexOf("Apple"); 
-        document.write(a);
+        document.write(a); // returns 4
     </script>
     <hr>
     
@@ -98,7 +98,7 @@
     join() does not change the original array.</p>
     <script>
         var fruits = ["Banana", "Orange", "Apple", "Mango"];
-        var a=fruits.join() ;  // Returns "Banana,Orange,Apple,Mango"
+        var a=fruits.join("#") ;  // Returns Banana#Orange#Apple#Mango // Returns Banana,Orange,Apple,Mango by default, if "#" is not used
         document.write(a);
         console.log('Array vaues using Join');
         console.log(a);
@@ -108,12 +108,18 @@
 
         <p>The slice() method returns selected elements in an array, as a new array.
         slice() selects the elements starting at the given start argument, and ends at, but does not include, the given end argument.
-        slice() does not change the original array.</p>
+        slice() does not change the original array.
+        negative numbers in slice() mean “count from the end of the array.”
+        If the index is negative, it starts counting from the end of the array (-1 is the last element, -2 is the second last, and so on).
+        NOTE: END index is not included.
+    </p>
         <script>
             var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
             //extract the third and fourth elements, using negative numbers.
+            document.write("Actual Array = " + fruits + "<br>");
+            document.write("Sliced Array" + "<br>");
             var a = fruits.slice(-3, -1);  // Lemon,Apple    [takes index as 1]
-            document.write("Negative slice values -3, -1 " + a);
+            document.write("Negative slice values -3, 0 " + a);
             document.writeln("<br/>"); 
             var b = fruits.slice(1, 4);   // Orange,Lemon,Apple  [takes index as 0, upto 4th index]
             document.write("Positive slice values 1, 4 " + b);
@@ -129,7 +135,13 @@
         </script>
         <hr>
 
-        <p>The filter() method creates a new array with all elements that pass the test implemented by the provided function.</p>
+        <p>The filter() method creates a new array with all elements that pass the test implemented by the provided function.
+        The filter() method does not execute the function for empty elements.
+        The filter() method does not change the original array.
+        word → is just a parameter (variable name) that represents the current element of the array during each iteration.
+        word is just a placeholder for each element in the array while filter() processes it.
+    
+        </p>
         <script>
             var words = ['Hemanth', 'Harshan', 'Divya Prakash', 'Dhana Prakash', 'Vasanth'];
             var result = words.filter(word => word.length == 7 );

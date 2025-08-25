@@ -1,99 +1,121 @@
-<!DOCTYPE html>  
- <html>  
- <head>  
-  <title>innerhtml</title>  
-</head>  
- <body>  
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>innerhtml</title>
+  </head>
+  <body>
     <a id="myAnchor" href="http://www.microsoft.com">Microsoft</a>
     <button onclick="myFunction()">Change link</button>
     <ul id="myList">
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JS</li>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JS</li>
     </ul>
     <p>Click the button get the HTML content of the ul element.</p>
 
     <button onclick="myFunction1()">To Get List contents</button>
-
-    <p id="demo"></p>
-  
+    <p id="demonstrate"></p>
     <script>
-        function myFunction()
-        {
+      function myFunction() {
         document.getElementById("myAnchor").innerHTML = "Google";
         document.getElementById("myAnchor").href = "https://www.google.com";
         document.getElementById("myAnchor").target = "_blank";
-        }
+      }
 
-        function myFunction1()
-        {
+      function myFunction1() {
         var x = document.getElementById("myList").innerHTML;
-        document.getElementById("demo").innerHTML = x;
-        }
+        document.getElementById("demonstrate").innerHTML = x;
+      }
     </script>
-    <hr>
+    <hr />
 
     <script type="text/javascript">
-        function changeText2()
-        {
-            var myName = document.getElementById('userInput').value;
-            document.getElementById('name').innerHTML = myName;
-        }
+      function changeText2() {
+        var myName = document.getElementById("userInput").value;
+        document.getElementById("name").innerHTML = myName;
+      }
     </script>
-    <p>My name is: <b id='name'>abc</b> </p> 
-    <input type='text' id='userInput' placeholder='Enter Text Here' />
-    <input type='button' onclick='changeText2()' value='Change Text'/>
-    <hr>
+    <p>My name is: <b id="name">abc</b></p>
+    <input type="text" id="userInput" placeholder="Enter Text Here" />
+    <input type="button" onclick="changeText2()" value="Change Text" />
+    <hr />
 
     <script>
-        function myPopup()
-            {
-            window.open( "http://www.google.com/" )
-        }
+      function myPopup() {
+        window.open("http://www.google.com/");
+      }
     </script>
     <form>
-        <input type="button" onClick="myPopup()" value="POP!">
+      <input type="button" onClick="myPopup()" value="POP!" />
     </form>
     <p onClick="myPopup()">CLICK ME TOO!</p>
-    <hr>
-
+    <hr />
 
     <script>
-        function confirmation() 
-        {
-            var answer = confirm("Leave Current Page?")
-            if (answer)
-                {
-                alert("Bye bye!")
-                window.location = "http://www.google.com/";
-            }
-            else{
-                alert("Thanks for sticking around!")
-                }
-            }
-    </script>      
+      function confirmation() {
+        var answer = confirm("Leave Current Page?"); // Ok & Cancel
+        if (answer) {
+          alert("Bye Bye!");
+          window.location = "http://www.google.com/";
+        } else {
+          alert("Thanks for sticking around!");
+        }
+      }
+    </script>
     <form>
-        <input type="button" onclick="confirmation()" value="Leave Current Page">
+      <input
+        type="button"
+        onclick="confirmation()"
+        value="Leave Current Page"
+      />
     </form>
-    <hr>
-                
+    <hr />
+
     <script>
-        function prompter()
-            {
-                //var reply;
-            //var reply = prompt("Hey Trainee,What's your name?", "")
+      function prompter() {
+        //var reply;
+        //var reply = prompt("Hey Trainee,What's your name?", "")
         // while((reply=prompt("Hey Trainee,What's your name?", ""))!=null)
-        do{
-            var reply = prompt("Hey Trainee,What's your name?","")
-        } while(reply=="");
-        alert ( "Welcome to CG VAK " + reply + "!")
-    }
-    </script>               
-    <input type="button" onclick="prompter()" value="Say my name!">
+        do {
+          var reply = prompt("Hey Trainee,What's your name?", "");
+        } while (reply == "");
+        alert("Welcome to CG VAK " + reply + "!");
+      }
+    </script>
+    <input type="button" onclick="prompter()" value="Say my name!" />
     <form>
-        <input type="button" onclick= "alert('Have a good day')" value="Click me!!!!">
-    </form>
-                     
-</body>
+      <input
+        type="button"
+        onclick="alert('Have a good day')"
+        value="Click me!!!!"
+      />
+    </form> 
+
+    <hr />
+    <h4>Inner Text & Inner HTML</h4>
+    <p id="demo">Hello <b>World</b></p>
+    <p id="demo1">Hello <b>World</b></p>
+
+    <p id="demo2">Hello <b>World</b></p>
+
+    <script>
+      window.onload = function () {
+        var text2 = document.getElementById("demo2").innerText;
+        console.log("Loading : Inner Text : " + text2);
+      };
+    </script>
+
+    <script>
+      var text1 = document.getElementById("demo1").innerHTML;
+      console.log("Inner HTML : " + text1); // Output: Hello <b>World</b>
+    </script>
+    <hr />
+
+    <h2>JavaScript Functions</h2>
+    <p>This example shows how to create a function, and how to call it.</p>
+     <script>
+      var text = document.getElementById("demo").innerText;
+      console.log("Inner Text (Demo) : " + text); // Output: Hello World
+    </script>
+  </body>
 </html>

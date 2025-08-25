@@ -6,6 +6,7 @@
     <script type="text/javascript">
        function registration()
         {
+            console.dir("Text1: " + document.getElementById("t1"));
             var name= document.getElementById("t1").value;
             var email= document.getElementById("t2").value;
             var uname= document.getElementById("t3").value;
@@ -110,7 +111,7 @@
                 <td></td>
                 <td>
                     <input type="reset" value="Clear Form" id="res" class="btn" />
-                    <input type="submit" value="Create Account" class="btn" onclick="registration()" /></td>
+                    <input id="submit" type="submit" value="Create Account" class="btn" onclick="registration()" /></td>
                 </tr>
             </table>
         </div>

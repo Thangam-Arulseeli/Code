@@ -14,14 +14,16 @@
 
     <script>
             //JavaScript Passing Parameters to the Date Object
-            var d = new Date(2018,0,7,17,14,20);   // y,m,d,h,m,s Format
+            var d = new Date(2018,0,7,17,14,20);   // y,m,d,h,m,s Format -- Set the values using Date() constructor
+            //Note: The month is 0-indexed, so January is month 0, February is month 1, and so on.
+            //Therefore, December is month 11.
             document.write("The month counts from 0. December is month 11<br>");
             document.write(d);
     </script>
         <hr>
         <script>
             //JavaScript Construct a Date Object by Passing a Date String
-            var d = new Date("7 January 2018");
+            var d = new Date("7 January 2018"); // Sets the date by passing a date string to the Date() constructor
             document.write(d);
         </script>
             <hr>

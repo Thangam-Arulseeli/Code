@@ -11,8 +11,9 @@
          <!-- Including External JS code within HTML file --> 
          <script type="text/javascript" src="/Basics/js/first.js"></script>  
         <!-- <script type="text/javascript" src="../js/first.js"></script>   -->
-                <!--  Working Above script works --> 
-        <!-- <script type="text/javascript" src="http://127.0.0.1:5500/Basics/js/first.js"></script> -- Working -->
+        <!-- <script type="text/javascript" src="http://127.0.0.1:5501/Basics/js/first.js"> -->
+         <!--  Working Above script works --> 
+        </script> 
     </head>
     
     <body>
@@ -31,11 +32,11 @@
         <p>Welcome to JavaScript</p>  
 
        <form>  
-            <input type="button" value="click" onclick="msg1()"/>  
+            <input type="button" value="Click Me" onclick="msg1()"/>  
         </form>  
 
     <script type="text/javascript">  
-           alert("Welcome to javascript(BODY TAG)");  
+           alert("Welcome to javascript(BODY TAG) - While Loading the page");  
    </script> 
 
    <form>  
@@ -59,9 +60,10 @@
         * If it is a few lines of code, then better to implement the internal javascript code
     </pre>
        
-
-        <input type="button" value="click" onclick="myFunction( )"/>  
+<p id="p1">This is a paragraph</p>
+        <input type="button" value="Click Here" onclick="myFunction( )"/>  
         <input type="button" value="Message" onclick="getMessage()"/> 
+        <input type="button" value="Change P Value" onclick="document.getElementById('p1').innerHTML='The P value is changed'"/>
     </form> 
 
     </body>
