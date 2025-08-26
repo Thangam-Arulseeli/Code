@@ -21,7 +21,9 @@
       function greet(firstName, lastName) {
         console.log("Hello " + firstName + " " + lastName);
       }
-      greet("John");
+      greet("John"); // Output: Hello John
+      // Output: Hello John undefined (because the 2nd definition replaced the 1st one)
+      greet("John", "Peter");
       // Output: Hello undefined undefined (because the 2nd definition replaced the 1st one)
 
       /*How to Achieve "Overloading" in JavaScript
@@ -46,15 +48,15 @@ Instead of real overloading, we use techniques like:
       // Hello Guest
 
       // 2. Use default parameters
-      function greet(firstName, lastName = "") {
+      function greet1(firstName, lastName = "Kumar") {
         console.log("Hello " + firstName + " " + lastName);
       }
 
-      greet("John"); // Hello John
-      greet("John", "Doe"); // Hello John Doe
+      greet1("Adi"); // Hello Adi Kumar
+      greet1("Harsha", "Varthan"); // Hello Harsha Varthan
 
       //3. Use Object Parameters (more flexible)
-      function greet(options) {
+      function greet3(options) {
         if (options.lastName) {
           console.log("Hello " + options.firstName + " " + options.lastName);
         } else {
@@ -62,20 +64,23 @@ Instead of real overloading, we use techniques like:
         }
       }
 
-      greet({ firstName: "John" }); // Hello John
-      greet({ firstName: "John", lastName: "Doe" }); // Hello John Doe
+      greet3({ firstName: "Daniel" }); // Hello Daniel
+      greet3({ firstName: "Jeyam", lastName: "Christin" }); // Hello Jeyam Christin
 
       //4. Use Rest Parameters
       //The rest parameter (...args) collects all arguments into an array.
 
       function demo(...args) {
         console.log(args);
+        console.log(typeof args); //object (array)
+        console.log(args.length);
+        console.log(args[0] + "  " + args[1]);
       }
       demo(1); // [1]
       demo(1, 2, 3); // [1, 2, 3]
 
       //4.1. Overloaded by argument count
-      function greet(...args) {
+      function greet4(...args) {
         if (args.length === 1) {
           console.log("Hello " + args[0]);
         } else if (args.length === 2) {
@@ -85,14 +90,17 @@ Instead of real overloading, we use techniques like:
         }
       }
 
-      greet("John"); // Hello John
-      greet("John", "Doe"); // Hello John Doe
-      greet(); // Hello Guest
+      greet4("John"); // Hello John
+      greet4("John", "Doe"); // Hello John Doe
+      greet4(); // Hello Guest
 
       //4.2. Overloaded by type checking
       function calculate(...args) {
         if (args.length === 1 && typeof args[0] === "number") {
           console.log("Square: " + args[0] * args[0]);
+        }
+        if (args.length === 1 && typeof args[0] === "string") {
+          console.log("Welcome To " + args[0] + "!" );
         } else if (args.length === 2) {
           console.log("Sum: " + (args[0] + args[1]));
         } else {
@@ -101,8 +109,10 @@ Instead of real overloading, we use techniques like:
       }
 
       calculate(5); // Square: 25
+      calculate("JavaScript"); // Welcome To JavaScript!
       calculate(3, 7); // Sum: 10
-      calculate("Hi"); // Invalid input
+      calculate("Hi"); //Welcome To Hi!
+    
 
       //4.3 Flexible Function (like Java/C++ overloading)
       function info(...args) {
@@ -135,7 +145,12 @@ Instead of real overloading, we use techniques like:
             "You have to pass at least two arugments to perform addition."
           );
         }
-        // multiple arguments
+        // if two argument
+        else if (arguments.length == 2) {
+          let sum = arguments[0] + arguments[1];
+          console.log("Sum is " + sum);
+        }
+        // multiple arguments - More thsn two arguments
         else {
           let sum = 0;
           let length = arguments.length; //7

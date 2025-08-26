@@ -17,14 +17,15 @@
   </script>
   <hr>
 
+   <h2>JavaScript  Function Expression (Anonymous Function)</h2>
   <p id="demo"></p>
   <script>
-      var hello;
-      hello = function() 
+      var hello1;
+      hello1 = function () 
       {
         return "Hello World! - Function Expression (Anonymous Function)";
       }
-      document.getElementById("demo").innerHTML = hello();
+      document.getElementById("demo").innerHTML = hello1();
   </script>
   <hr>
 
@@ -33,20 +34,33 @@
     <p id="demo1"></p>
     <script>
         // var hello;
-        //hello = () => "Hello World!"; //Arrow Functions Return Value by Default:
-       var hello = () => {
+        //hello2 = () => "Hello World!"; //Arrow Functions Return Value by Default:
+       var hello2 = () => {
           return "Hello World! -- Arrow function";
         }
-        document.getElementById("demo1").innerHTML = hello();
+        document.getElementById("demo1").innerHTML = hello2();
     </script>
     <hr>
 
-    <p>This example shows an Arrow Function with a parameter.</p>
+    <p>This example shows an Arrow Function with a parameter. - Way - 1</p>
     <p id="demo2"></p>
     <script>
         //var hello;
-      var  hello = (fName, lName) => "Hello " + fName + "  " +lName + " ---- Arraw Function:With Parameter";
-        document.getElementById("demo2").innerHTML = hello("Peter", "Paul");
+      var  hello3 = (fName, lName) => {
+        //let len = fName.length + lName.length;
+        //console.log("Length of full name is: " + len);
+         return "Hello " + fName + "  " +lName ;//+  " ---- Arraw Function:With Parameter:: + Total Length(" + len + ")";
+      }
+        document.getElementById("demo2").innerHTML = hello3("Peter", "John");
+    </script>
+    <hr>
+
+    <p>This example shows an Arrow Function with a parameter. - Way 2</p>
+    <p id="demo2"></p>
+    <script>
+        //var hello;
+      var  hello4 = (fName, lName) => "Hello " + fName + "  " +lName + " ---- Arraw Function:With Parameter";
+        document.getElementById("demo2").innerHTML = hello4("Peter", "Paul");
     </script>
     <hr>
 
@@ -54,8 +68,8 @@
     <p id="demo3"></p>
     <script>
         var hello;
-        hello = val => "Hello " + val;
-        document.getElementById("demo3").innerHTML = hello("Universe!--Arrow Function:Passing Parameter Without ()");
+        hello5 = val => "Hello " + val;
+        document.getElementById("demo3").innerHTML = hello5("Universe!--Arrow Function:Passing Parameter Without ()");
     </script>
 
 <script>
@@ -68,7 +82,7 @@
       console.log("Z="+calculate(10,20));
       console.log("Z="+calculate((10),(20)));
 
-       //Traditional ordinary function
+       //Traditional ordinary function with default parameter
      function addition(x,y=10){
       return x+y;
      }
@@ -78,14 +92,14 @@
       return a+b;
      }
      
-     // Arrow Function Expression
+     // Arrow Function Expression with multiple parameters and it returns the value by default
      var arrowAdd = (a, b) => a + b;
 
      // Traditional function expression
     var multiplyBy2 = function(num){
       return num * 2;
     }
-    // Arrow function expression
+    // Arrow function expression - single parameter, so no (num) and it returns the value by default
     var arrowMultiplyBy2 = num => num * 2;
 
     console.log("Ordiary Function="+addition(2));
