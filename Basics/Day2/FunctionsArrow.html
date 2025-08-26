@@ -45,22 +45,21 @@
     <p>This example shows an Arrow Function with a parameter. - Way - 1</p>
     <p id="demo2"></p>
     <script>
-        //var hello;
       var  hello3 = (fName, lName) => {
-        //let len = fName.length + lName.length;
-        //console.log("Length of full name is: " + len);
-         return "Hello " + fName + "  " +lName ;//+  " ---- Arraw Function:With Parameter:: + Total Length(" + len + ")";
+        let len = fName.length + lName.length;
+        console.log("Length of full name is: " + len);
+         return "Hello " + fName + "  " +lName +  " ---- Arraw Function:With Parameter:: + Total Length(" + len + ")";
       }
         document.getElementById("demo2").innerHTML = hello3("Peter", "John");
     </script>
     <hr>
 
     <p>This example shows an Arrow Function with a parameter. - Way 2</p>
-    <p id="demo2"></p>
+    <p id="demo21"></p>
     <script>
         //var hello;
       var  hello4 = (fName, lName) => "Hello " + fName + "  " +lName + " ---- Arraw Function:With Parameter";
-        document.getElementById("demo2").innerHTML = hello4("Peter", "Paul");
+        document.getElementById("demo21").innerHTML = hello4("Peter", "Paul");
     </script>
     <hr>
 
