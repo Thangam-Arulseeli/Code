@@ -3,21 +3,61 @@
 <body>
 
     <p>Example for Nested Function - Counting with a local variable.</p>
-    <p id="demo1">0</p>
+    <p id="demo1">Counter Value : 0</p>
     
     <script>
-    document.getElementById("demo1").innerHTML = addition();
+    
     function addition() {
       let counter = 0;
-      function plus() {counter += 1;}
+      function plus() {counter += 1; }
       plus();  
       return counter; 
     }
+    document.getElementById("demo1").innerHTML = addition();
     </script>
 
 <!-- Example : 1 -->
 <h2>JavaScript Closures</h2>
-<p>Counting with a local variable.</p>
+
+<!-- Function Closure in JavaScript
+Definition:
+A closure is created when a function "remembers" the variables from its outer scope, 
+    even after the outer function has finished executing.
+In simple terms:
+Functions in JS can access variables from the scope in which they were created, 
+not just when they are called.
+This lets you keep state or create private variables. -->
+
+<p6> Example: Closure </p6>
+<p>Counting with a local variable.-- Way 1</p>
+<button type="button" onclick="outer()">Count!</button>
+<script>
+function outer() {
+   let count = 0;   // variable in outer scope
+
+   function inner() {
+      count++;
+      return count;
+   }
+
+   return inner;
+}
+
+let counter = outer();  // outer() returns inner()
+console.log(counter()); // 1
+console.log(counter()); // 2
+console.log(counter()); // 3
+
+</script>
+
+<!-- Even though outer() has finished, the inner() function remembers count → that’s a closure.
+Closures are used for:
+1. Data privacy (private variables)
+2. Maintaining state
+3. Callback functions and event handlers
+-->
+
+<p>Counting with a local variable.-- Way 2</p>
 <button type="button" onclick="myFunction()">Count!</button>
 <p id="demo">0</p>
 
@@ -30,16 +70,47 @@ const add = (function () {
 function myFunction(){
   document.getElementById("demo").innerHTML = add();
 }
+</script>
 
-// Example 2
-(function(outer) {
-    return (function(inner) {
-        console.log(outer);
-        console.log(inner);
-    })(200)
-})(100);
+ <!-- Example 2 -->
+  <script>
+// Example: Closure for a simple bank account
+function bankAccount(initialBalance) {
+   let balance = initialBalance;  // private variable
 
+   return {
+      deposit: function(amount) {
+         balance += amount;
+         return balance;
+      },
+      withdraw: function(amount) {
+         if (amount <= balance) {
+            balance -= amount;
+            return balance;
+         } else {
+            return "Insufficient balance";
+         }
+      },
+      checkBalance: function() {
+         return balance;
+      }
+   };
+}
 
+let account = bankAccount(1000);
+
+console.log(account.checkBalance()); // 1000
+console.log(account.deposit(500));   // 1500
+console.log(account.withdraw(200));  // 1300
+console.log(account.withdraw(2000)); // Insufficient balance
+console.log(account.checkBalance()); // 1300
+
+/*How it works:
+/balance is declared inside bankAccount, so it’s not directly accessible from outside.
+ The returned methods (deposit, withdraw, checkBalance) are closures
+    → they keep a reference to balance even after bankAccount has finished executing.
+ This gives us a way to simulate private variables in JavaScript.
+*/
 </script>
 
 </body>

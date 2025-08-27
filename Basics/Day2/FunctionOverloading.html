@@ -98,8 +98,7 @@ Instead of real overloading, we use techniques like:
       function calculate(...args) {
         if (args.length === 1 && typeof args[0] === "number") {
           console.log("Square: " + args[0] * args[0]);
-        }
-        if (args.length === 1 && typeof args[0] === "string") {
+        } else if (args.length === 1 && typeof args[0] === "string") {
           console.log("Welcome To " + args[0] + "!" );
         } else if (args.length === 2) {
           console.log("Sum: " + (args[0] + args[1]));
